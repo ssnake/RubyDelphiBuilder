@@ -1,0 +1,22 @@
+#!env ruby
+
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'lib')
+
+require 'delphi_builder'
+require 'thor'
+require 'yaml'
+
+class Rdbuilder < Thor
+
+	desc "build prj_cfg.yml", "build project"
+	#method_option %w(options o) => :string
+	#method_options :force => :boolean, :alias => :string   
+	def build(prj_cfg_filename, additional_options="")
+          b = DelphiBuilder::Builder.new prj_cfg_filename
+          b.build 
+	end
+#	default_task :build
+
+end
+
+Rdbuilder.start
