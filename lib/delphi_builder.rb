@@ -120,6 +120,7 @@ module DelphiBuilder
 			
 		end
 		def build_ut
+			return if @cfg["unit_test_prj"].nil?
 			@cfg["unit_test_prj"].each do |ut|
 				print "compiling #{ut}...."
 				res = compile ut 
@@ -153,6 +154,7 @@ module DelphiBuilder
 			end
 		end
 		def copy_files
+			return if @cfg["copy"].nil?
 			dest = @cfg["copy"]["dest"]
 			@cfg["copy"]["source"].each do |file|
 				print "copying #{file} to #{dest}...."
@@ -162,6 +164,7 @@ module DelphiBuilder
 			end
 		end
 		def build_installer
+			return if @cfg["installer_path"].nil?
 			@installer_path = find_path @cfg["installer_path"]
 			if @installer_path.nil?
 				raise "Unable to find installer path"

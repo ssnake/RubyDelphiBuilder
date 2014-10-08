@@ -5,6 +5,6 @@ Gem::Specification.new do |s|
   s.summary = 'ruby delphi builder'
   s.author  = 'snake'
   s.email   = 'snake@snakelab.cc'
-  s.files   =  ["lib/delphi_builder.rb", "lib/helper.rb", "lib/bdsproj_parser.rb", "lib/dproj_parser.rb", "lib/installer.rb"]
+  s.files   =  ["lib/delphi_builder.rb", "lib/helper.rb", "lib/bdsproj_parser.rb", "lib/dproj_parser.rb", "lib/installer.rb", "lib/cfg_parser.rb"]
   s.executables << 'rdbuilder'
 end                           
